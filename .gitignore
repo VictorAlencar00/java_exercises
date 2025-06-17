@@ -1,0 +1,13 @@
+/bin/
+*.class
+
+.classpath
+.project
+.settings/
+
+.metadata/
+
+*.log
+tmp/
+
+/curso_programacao
