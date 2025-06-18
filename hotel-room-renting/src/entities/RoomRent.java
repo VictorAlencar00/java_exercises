@@ -3,12 +3,16 @@ package entities;
 public class RoomRent {
 	public String name;
 	public String email;
-	public int roomNumber;
 	
-	public RoomRent(String name, String email, int roomNumber) {
+	public RoomRent(String name, String email) {
 		super();
 		this.name = name;
 		this.email = email;
-		this.roomNumber = roomNumber;
 	}
+
+	@Override
+	public String toString() {
+		return name + ", " + email ;
+	}
+	
 }
