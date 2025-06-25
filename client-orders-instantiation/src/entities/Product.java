@@ -26,4 +26,11 @@ public class Product {
 		this.price = price;
 	}
 
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(name + ", ");
+		sb.append(price + ", ");
+		return sb.toString();
+	}
+
 }

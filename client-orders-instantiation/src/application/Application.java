@@ -37,11 +37,11 @@ public class Application {
 		System.out.print("How many items to this order? ");
 		int itemsQuantity = sc.nextInt();
 
-		Order order = new Order(status, itemsQuantity);
+		Order order = new Order(client, new Date(), status);
 
 		for (int i = 0; i < itemsQuantity; i++) {
-
-			System.out.println("Enter #" + i + 1 + "item data: ");
+			System.out.println();
+			System.out.println("Enter #" + i + 1 + " item data: ");
 			System.out.print("Name: ");
 			String productName = sc.next();
 
@@ -51,9 +51,13 @@ public class Application {
 			System.out.print("Quantity: ");
 			int productQuantity = sc.nextInt();
 
-			OrderItem orderItem = new OrderItem(productQuantity);
 			Product product = new Product(productName, productPrice);
+			OrderItem orderItem = new OrderItem(product, productQuantity);
+			order.addItem(orderItem);
 		}
+		System.out.println();
+		System.out.println("Order Summary: ");
+		System.out.println(order);
 
 		sc.close();
 	}
