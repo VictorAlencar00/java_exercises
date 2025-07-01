@@ -5,7 +5,7 @@
 .project
 .settings/
 
-.idea
+.idea/
 .metadata/
 
 *.log
