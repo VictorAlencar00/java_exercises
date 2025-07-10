@@ -6,7 +6,7 @@ import model.entities.Installment;
 import java.time.LocalDate;
 
 public class ContractService {
-    private PaymentService paymentService;
+    private final PaymentService paymentService;
 
     public ContractService(PaymentService paymentService) {
         this.paymentService = paymentService;
