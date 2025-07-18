@@ -18,13 +18,8 @@ public class Main {
                 String[] parts = line.split(",");
                 String name = parts[0];
                 int votes = Integer.parseInt(parts[1]);
-                if (candidates.containsKey(name)) {
-                    int previousVotes = candidates.get(name);
-                    candidates.put(name, votes + previousVotes);
-                    //possible implementation of Map.compute
-                } else {
-                    candidates.put(name, votes);
-                }
+//                candidates.compute(name,(storedName, storedVotes) -> (storedVotes == null)? votes : storedVotes + votes );
+                candidates.merge(name, votes, Integer::sum);
                 line = br.readLine();
             }
         } catch (IOException e) {
